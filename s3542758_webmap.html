@@ -12,6 +12,51 @@ body { margin: 0; padding: 0; }
 </style>
 </head>
 <body>
+<style>
+#menu {
+background: #fff;
+position: absolute;
+z-index: 1;
+top: 10px;
+right: 10px;
+border-radius: 3px;
+width: 120px;
+border: 1px solid rgba(0, 0, 0, 0.4);
+font-family: 'Open Sans', sans-serif;
+}
+ 
+#menu a {
+font-size: 13px;
+color: #404040;
+display: block;
+margin: 0;
+padding: 0;
+padding: 10px;
+text-decoration: none;
+border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+text-align: center;
+}
+ 
+#menu a:last-child {
+border: none;
+}
+ 
+#menu a:hover {
+background-color: #f8f8f8;
+color: #404040;
+}
+ 
+#menu a.active {
+background-color: #3887be;
+color: #ffffff;
+}
+ 
+#menu a.active:hover {
+background: #3074a4;
+}
+</style>
+
+<nav id="menu"></nav>
 <div id="map"></div>
 
 <script>
@@ -28,7 +73,7 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/fotley/cko0vhaap04i117nykvkb79n8', // style URL
     //maxBounds: bounds
     center: [145.257, -37.922], // starting position [lng, lat]
-    zoom: 9 // starting zoom
+    zoom: 8.5 // starting zoom
 });
 
 map.on('load', function() {
@@ -56,14 +101,14 @@ map.on('load', function() {
       "circle-opacity": 0.70,
       "circle-radius": {
         "stops": [
-          [7, 1.8],
+          [7, 3.0],
           //varying circle size with zoom
           [22, 140]
         ],
         "base": 1.75,
       }
     },
-    'minzoom': 9,
+    'minzoom': 8,
     //limiting visibility of layer with zoom
     'source-layer': 'SummerTree-6zwvxm'
   });
@@ -89,14 +134,14 @@ map.on('load', function() {
       "circle-opacity": 0.70,
       "circle-radius": {
         "stops": [
-          [7, 1.8],
+          [7, 3.0],
           //varying circle size with zoom
           [22, 140]
         ],
         "base": 1.75,
       }
     },
-    'minzoom': 9,
+    'minzoom': 8,
     //limiting visibility of layer with zoom
     'source-layer': 'SummerGrass-7swkts'
   });
@@ -122,14 +167,14 @@ map.on('load', function() {
       "circle-opacity": 0.70,
       "circle-radius": {
         "stops": [
-          [7, 1.8],
+          [7, 3.0],
           //varying circle size with zoom
           [22, 140]
         ],
         "base": 1.75,
       }
     },
-    'minzoom': 9,
+    'minzoom': 8,
     //limiting visibility of layer with zoom
     'source-layer': 'SummerWeeds-6ov5k8'
   });
@@ -155,14 +200,14 @@ map.on('load', function() {
       "circle-opacity": 0.70,
       "circle-radius": {
         "stops": [
-          [7, 1.8],
+          [7, 3.0],
           //varying circle size with zoom
           [22, 140]
         ],
         "base": 1.75,
       }
     },
-    'minzoom': 9,
+    'minzoom': 8,
     //limiting visibility of layer with zoom
     'source-layer': 'AutumnTree-28f98e'
   });
@@ -187,14 +232,14 @@ map.on('load', function() {
       "circle-opacity": 0.70,
       "circle-radius": {
         "stops": [
-          [7, 1.8],
+          [7, 3.0],
           //varying circle size with zoom
           [22, 140]
         ],
         "base": 1.75,
       }
     },
-    'minzoom': 9,
+    'minzoom': 8,
     //limiting visibility of layer with zoom
     'source-layer': 'AutumnGrass-5354pm'
   });
@@ -219,14 +264,14 @@ map.on('load', function() {
       "circle-opacity": 0.70,
       "circle-radius": {
         "stops": [
-          [7, 1.8],
+          [7, 3.0],
           //varying circle size with zoom
           [22, 140]
         ],
         "base": 1.75,
       }
     },
-    'minzoom': 9,
+    'minzoom': 8,
     //limiting visibility of layer with zoom
     'source-layer': 'WinterTree-9qm77d'
   });
@@ -251,14 +296,14 @@ map.on('load', function() {
       "circle-opacity": 0.70,
       "circle-radius": {
         "stops": [
-          [7, 1.8],
+          [7, 3.0],
           //varying circle size with zoom
           [22, 140]
         ],
         "base": 1.75,
       }
     },
-    'minzoom': 9,
+    'minzoom': 8,
     //limiting visibility of layer with zoom
     'source-layer': 'WinterGrass-6ebfib'
   });
@@ -283,14 +328,14 @@ map.on('load', function() {
       "circle-opacity": 0.70,
       "circle-radius": {
         "stops": [
-          [7, 1.8],
+          [7, 3.0],
           //varying circle size with zoom
           [22, 140]
         ],
         "base": 1.75,
       }
     },
-    'minzoom': 9,
+    'minzoom': 8,
     //limiting visibility of layer with zoom
     'source-layer': 'SpringTree-d0ff76'
   });
@@ -315,14 +360,14 @@ map.on('load', function() {
       "circle-opacity": 0.70,
       "circle-radius": {
         "stops": [
-          [7, 1.8],
+          [7, 3.0],
           //varying circle size with zoom
           [22, 140]
         ],
         "base": 1.75,
       }
     },
-    'minzoom': 9,
+    'minzoom': 8,
     //limiting visibility of layer with zoom
     'source-layer': 'SpringGrass-3w4ra6'
   });
@@ -347,14 +392,14 @@ map.on('load', function() {
       "circle-opacity": 0.70,
       "circle-radius": {
         "stops": [
-          [7, 1.8],
+          [7, 3.0],
           //varying circle size with zoom
           [22, 140]
         ],
         "base": 1.75,
       }
     },
-    'minzoom': 9,
+    'minzoom': 8,
     //limiting visibility of layer with zoom
     'source-layer': 'SpringWeeds1-d58w7y'
   });
@@ -481,6 +526,60 @@ map.on('click', 'SpringWeeds1', function(e) {
 map.on('mouseleave', 'SpringWeeds1', function() {
   map.getCanvas().style.cursor = '';
 });
+
+map.on('idle', () => {
+// If these two layers were not added to the map, abort
+if (!map.getLayer('SummerTree') || !map.getLayer('SummerGrass') || !map.getLayer('SummerWeeds') || !map.getLayer('AutumnTree') || !map.getLayer('AutumnGrass') || !map.getLayer('WinterTree') || !map.getLayer('WinterGrass') || !map.getLayer('SpringTree') || !map.getLayer('SpringGrass') || !map.getLayer('SpringWeeds1')) {
+return;
+}
+ 
+// Enumerate ids of the layers.
+const toggleableLayerIds = ['SummerTree', 'SummerGrass', 'SummerWeeds', 'AutumnTree', 'AutumnGrass', 'WinterTree', 'WinterGrass', 'SpringTree', 'SpringGrass', 'SpringWeeds1'];
+ 
+// Set up the corresponding toggle button for each layer.
+for (const id of toggleableLayerIds) {
+// Skip layers that already have a button set up.
+if (document.getElementById(id)) {
+continue;
+}
+ 
+// Create a link.
+const link = document.createElement('a');
+link.id = id;
+link.href = '#';
+link.textContent = id;
+link.className = 'active';
+ 
+// Show or hide layer when the toggle is clicked.
+link.onclick = function (e) {
+const clickedLayer = this.textContent;
+e.preventDefault();
+e.stopPropagation();
+ 
+const visibility = map.getLayoutProperty(
+clickedLayer,
+'visibility'
+);
+ 
+// Toggle layer visibility by changing the layout object's visibility property.
+if (visibility === 'visible') {
+map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+this.className = '';
+} else {
+this.className = 'active';
+map.setLayoutProperty(
+clickedLayer,
+'visibility',
+'visible'
+);
+}
+};
+ 
+const layers = document.getElementById('menu');
+layers.appendChild(link);
+}
+});
+
 </script>
  
 </body>
