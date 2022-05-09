@@ -25,16 +25,462 @@ var bounds = [
 
 var map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/fotley/cko0vct2m0ape18ndczrvcx1q', // style URL
+    style: 'mapbox://styles/fotley/cko0vhaap04i117nykvkb79n8', // style URL
     //maxBounds: bounds
     center: [145.257, -37.922], // starting position [lng, lat]
-    zoom: 8.35 // starting zoom
+    zoom: 9 // starting zoom
 });
 
 map.on('load', function() {
-    map.addSource('Grass-SPRING', )
-})
+  // Added a custom vector tileset source for each year of the Sands and McDougall Directory. This tileset contains Directory year (year of sands and mcD publication)
+  // point features 
+  map.addSource('SummerTree', {
+    type: 'vector',
+    url: 'mapbox://fotley.ama38xqv'
+  });
 
+  map.addLayer({
+    'id': 'SummerTree',
+    'type': 'circle',
+    'source': 'SummerTree',
+    'layout': {
+      // Make the layer visible by default.
+      'visibility': 'visible'
+    },
+    'paint': {
+      "circle-color": "Red",
+      //change the circle colour, outline width, colour, opacity
+      //same format used for all layers added
+      "circle-stroke-width": 0.5,
+      "circle-stroke-color": "White",
+      "circle-opacity": 0.70,
+      "circle-radius": {
+        "stops": [
+          [7, 1.8],
+          //varying circle size with zoom
+          [22, 140]
+        ],
+        "base": 1.75,
+      }
+    },
+    'minzoom': 9,
+    //limiting visibility of layer with zoom
+    'source-layer': 'SummerTree-6zwvxm'
+  });
+
+  map.addSource('SummerGrass', {
+    type: 'vector',
+    url: 'mapbox://fotley.707ntsfm'
+  });
+  map.addLayer({
+    'id': 'SummerGrass',
+    'type': 'circle',
+    'source': 'SummerGrass',
+    'layout': {
+      // Make the layer visible by default.
+      'visibility': 'visible'
+    },
+    'paint': {
+      "circle-color": "Green",
+      //change the circle colour, outline width, colour, opacity
+      //same format used for all layers added
+      "circle-stroke-width": 0.5,
+      "circle-stroke-color": "White",
+      "circle-opacity": 0.70,
+      "circle-radius": {
+        "stops": [
+          [7, 1.8],
+          //varying circle size with zoom
+          [22, 140]
+        ],
+        "base": 1.75,
+      }
+    },
+    'minzoom': 9,
+    //limiting visibility of layer with zoom
+    'source-layer': 'SummerGrass-7swkts'
+  });
+  
+  map.addSource('SummerWeeds', {
+    type: 'vector',
+    url: 'mapbox://fotley.8nesgqpq'
+  });
+  map.addLayer({
+    'id': 'SummerWeeds',
+    'type': 'circle',
+    'source': 'SummerWeeds',
+    'layout': {
+      // Make the layer visible by default.
+      'visibility': 'visible'
+    },
+    'paint': {
+      "circle-color": "Orange",
+      //change the circle colour, outline width, colour, opacity
+      //same format used for all layers added
+      "circle-stroke-width": 0.5,
+      "circle-stroke-color": "White",
+      "circle-opacity": 0.70,
+      "circle-radius": {
+        "stops": [
+          [7, 1.8],
+          //varying circle size with zoom
+          [22, 140]
+        ],
+        "base": 1.75,
+      }
+    },
+    'minzoom': 9,
+    //limiting visibility of layer with zoom
+    'source-layer': 'SummerWeeds-6ov5k8'
+  });
+
+  map.addSource('AutumnTree', {
+    type: 'vector',
+    url: 'mapbox://fotley.ciitj6sq'
+  });
+  map.addLayer({
+    'id': 'AutumnTree',
+    'type': 'circle',
+    'source': 'AutumnTree',
+    'layout': {
+      // Make the layer visible by default.
+      'visibility': 'visible'
+    },
+    'paint': {
+      "circle-color": "red",
+      //change the circle colour, outline width, colour, opacity
+      //same format used for all layers added
+      "circle-stroke-width": 0.5,
+      "circle-stroke-color": "White",
+      "circle-opacity": 0.70,
+      "circle-radius": {
+        "stops": [
+          [7, 1.8],
+          //varying circle size with zoom
+          [22, 140]
+        ],
+        "base": 1.75,
+      }
+    },
+    'minzoom': 9,
+    //limiting visibility of layer with zoom
+    'source-layer': 'AutumnTree-28f98e'
+  });
+  map.addSource('AutumnGrass', {
+    type: 'vector',
+    url: 'mapbox://fotley.86bzl2te'
+  });
+  map.addLayer({
+    'id': 'AutumnGrass',
+    'type': 'circle',
+    'source': 'AutumnGrass',
+    'layout': {
+      // Make the layer visible by default.
+      'visibility': 'visible'
+    },
+    'paint': {
+      "circle-color": "green",
+      //change the circle colour, outline width, colour, opacity
+      //same format used for all layers added
+      "circle-stroke-width": 0.5,
+      "circle-stroke-color": "White",
+      "circle-opacity": 0.70,
+      "circle-radius": {
+        "stops": [
+          [7, 1.8],
+          //varying circle size with zoom
+          [22, 140]
+        ],
+        "base": 1.75,
+      }
+    },
+    'minzoom': 9,
+    //limiting visibility of layer with zoom
+    'source-layer': 'AutumnGrass-5354pm'
+  });
+  map.addSource('WinterTree', {
+    type: 'vector',
+    url: 'mapbox://fotley.1mttrck8'
+  });
+  map.addLayer({
+    'id': 'WinterTree',
+    'type': 'circle',
+    'source': 'WinterTree',
+    'layout': {
+      // Make the layer visible by default.
+      'visibility': 'visible'
+    },
+    'paint': {
+      "circle-color": "red",
+      //change the circle colour, outline width, colour, opacity
+      //same format used for all layers added
+      "circle-stroke-width": 0.5,
+      "circle-stroke-color": "White",
+      "circle-opacity": 0.70,
+      "circle-radius": {
+        "stops": [
+          [7, 1.8],
+          //varying circle size with zoom
+          [22, 140]
+        ],
+        "base": 1.75,
+      }
+    },
+    'minzoom': 9,
+    //limiting visibility of layer with zoom
+    'source-layer': 'WinterTree-9qm77d'
+  });
+  map.addSource('WinterGrass', {
+    type: 'vector',
+    url: 'mapbox://fotley.c2fxsnuy'
+  });
+  map.addLayer({
+    'id': 'WinterGrass',
+    'type': 'circle',
+    'source': 'WinterGrass',
+    'layout': {
+      // Make the layer visible by default.
+      'visibility': 'visible'
+    },
+    'paint': {
+      "circle-color": "green",
+      //change the circle colour, outline width, colour, opacity
+      //same format used for all layers added
+      "circle-stroke-width": 0.5,
+      "circle-stroke-color": "White",
+      "circle-opacity": 0.70,
+      "circle-radius": {
+        "stops": [
+          [7, 1.8],
+          //varying circle size with zoom
+          [22, 140]
+        ],
+        "base": 1.75,
+      }
+    },
+    'minzoom': 9,
+    //limiting visibility of layer with zoom
+    'source-layer': 'WinterGrass-6ebfib'
+  });
+  map.addSource('SpringTree', {
+    type: 'vector',
+    url: 'mapbox://fotley.3bym3fud'
+  });
+  map.addLayer({
+    'id': 'SpringTree',
+    'type': 'circle',
+    'source': 'SpringTree',
+    'layout': {
+      // Make the layer visible by default.
+      'visibility': 'visible'
+    },
+    'paint': {
+      "circle-color": "red",
+      //change the circle colour, outline width, colour, opacity
+      //same format used for all layers added
+      "circle-stroke-width": 0.5,
+      "circle-stroke-color": "White",
+      "circle-opacity": 0.70,
+      "circle-radius": {
+        "stops": [
+          [7, 1.8],
+          //varying circle size with zoom
+          [22, 140]
+        ],
+        "base": 1.75,
+      }
+    },
+    'minzoom': 9,
+    //limiting visibility of layer with zoom
+    'source-layer': 'SpringTree-d0ff76'
+  });
+  map.addSource('SpringGrass', {
+    type: 'vector',
+    url: 'mapbox://fotley.4q5z4v68'
+  });
+  map.addLayer({
+    'id': 'SpringGrass',
+    'type': 'circle',
+    'source': 'SpringGrass',
+    'layout': {
+      // Make the layer visible by default.
+      'visibility': 'visible'
+    },
+    'paint': {
+      "circle-color": "green",
+      //change the circle colour, outline width, colour, opacity
+      //same format used for all layers added
+      "circle-stroke-width": 0.5,
+      "circle-stroke-color": "White",
+      "circle-opacity": 0.70,
+      "circle-radius": {
+        "stops": [
+          [7, 1.8],
+          //varying circle size with zoom
+          [22, 140]
+        ],
+        "base": 1.75,
+      }
+    },
+    'minzoom': 9,
+    //limiting visibility of layer with zoom
+    'source-layer': 'SpringGrass-3w4ra6'
+  });
+  map.addSource('SpringWeeds1', {
+    type: 'vector',
+    url: 'mapbox://fotley.ai64ir3v'
+  });
+  map.addLayer({
+    'id': 'SpringWeeds1',
+    'type': 'circle',
+    'source': 'SpringWeeds1',
+    'layout': {
+      // Make the layer visible by default.
+      'visibility': 'visible'
+    },
+    'paint': {
+      "circle-color": "Orange",
+      //change the circle colour, outline width, colour, opacity
+      //same format used for all layers added
+      "circle-stroke-width": 0.5,
+      "circle-stroke-color": "White",
+      "circle-opacity": 0.70,
+      "circle-radius": {
+        "stops": [
+          [7, 1.8],
+          //varying circle size with zoom
+          [22, 140]
+        ],
+        "base": 1.75,
+      }
+    },
+    'minzoom': 9,
+    //limiting visibility of layer with zoom
+    'source-layer': 'SpringWeeds1-d58w7y'
+  });
+});
+map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+
+map.on('mouseenter', 'SummerTree', function() {
+  map.getCanvas().style.cursor = 'pointer';
+});
+map.on('click', 'SummerTree', function(e) {
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.scientificName + "<br>" + e.features[0].properties.year)
+    .addTo(map);
+});
+map.on('mouseleave', 'SummerTree', function() {
+  map.getCanvas().style.cursor = '';
+});
+map.on('mouseenter', 'SummerGrass', function() {
+  map.getCanvas().style.cursor = 'pointer';
+});
+map.on('click', 'SummerGrass', function(e) {
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.scientificName + "<br>" + e.features[0].properties.year)
+    .addTo(map);
+});
+map.on('mouseleave', 'SummerGrass', function() {
+  map.getCanvas().style.cursor = '';
+});
+map.on('mouseenter', 'SummerWeeds', function() {
+  map.getCanvas().style.cursor = 'pointer';
+});
+map.on('click', 'SummerWeeds', function(e) {
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.scientificName + "<br>" + e.features[0].properties.year)
+    .addTo(map);
+});
+map.on('mouseleave', 'SummerWeeds', function() {
+  map.getCanvas().style.cursor = '';
+});
+map.on('mouseenter', 'AutumnTree', function() {
+  map.getCanvas().style.cursor = 'pointer';
+});
+map.on('click', 'AutumnTree', function(e) {
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.scientificName + "<br>" + e.features[0].properties.year)
+    .addTo(map);
+});
+map.on('mouseleave', 'AutumnTree', function() {
+  map.getCanvas().style.cursor = '';
+});
+map.on('mouseenter', 'AutumnGrass', function() {
+  map.getCanvas().style.cursor = 'pointer';
+});
+map.on('click', 'AutumnGrass', function(e) {
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.scientificName + "<br>" + e.features[0].properties.year)
+    .addTo(map);
+});
+map.on('mouseleave', 'AutumnGrass', function() {
+  map.getCanvas().style.cursor = '';
+});
+map.on('mouseenter', 'WinterGrass', function() {
+  map.getCanvas().style.cursor = 'pointer';
+});
+map.on('click', 'WinterGrass', function(e) {
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.scientificName + "<br>" + e.features[0].properties.year)
+    .addTo(map);
+});
+map.on('mouseleave', 'WinterGrass', function() {
+  map.getCanvas().style.cursor = '';
+});
+map.on('mouseenter', 'WinterTree', function() {
+  map.getCanvas().style.cursor = 'pointer';
+});
+map.on('click', 'WinterTree', function(e) {
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.scientificName + "<br>" + e.features[0].properties.year)
+    .addTo(map);
+});
+map.on('mouseleave', 'WinterTree', function() {
+  map.getCanvas().style.cursor = '';
+});
+map.on('mouseenter', 'SpringTree', function() {
+  map.getCanvas().style.cursor = 'pointer';
+});
+map.on('click', 'SpringTree', function(e) {
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.scientificName + "<br>" + e.features[0].properties.year)
+    .addTo(map);
+});
+map.on('mouseleave', 'SpringTree', function() {
+  map.getCanvas().style.cursor = '';
+});
+map.on('mouseenter', 'SpringGrass', function() {
+  map.getCanvas().style.cursor = 'pointer';
+});
+map.on('click', 'SpringGrass', function(e) {
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.scientificName + "<br>" + e.features[0].properties.year)
+    .addTo(map);
+});
+map.on('mouseleave', 'SpringGrass', function() {
+  map.getCanvas().style.cursor = '';
+});
+map.on('mouseenter', 'SpringWeeds1', function() {
+  map.getCanvas().style.cursor = 'pointer';
+});
+map.on('click', 'SpringWeeds1', function(e) {
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.scientificName + "<br>" + e.features[0].properties.year)
+    .addTo(map);
+});
+map.on('mouseleave', 'SpringWeeds1', function() {
+  map.getCanvas().style.cursor = '';
+});
 </script>
  
 </body>
