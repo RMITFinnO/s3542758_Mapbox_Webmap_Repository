@@ -403,6 +403,19 @@ map.on('load', function() {
     //limiting visibility of layer with zoom
     'source-layer': 'SpringWeeds1-d58w7y'
   });
+  map.addSource('HayvenSuburb', {
+    type: 'vector',
+    url: 'mapbox://fotley.5fsz9mby'
+  });
+  map.addLayer({
+      'id': 'HayvenSuburb',
+      'type': 'fill',
+      'source': 'HayvenSuburb',
+      'layout': {
+          'visibility': 'visible'
+    },
+    'source-layer': 'HavenSuburb-3oi6lb'
+  })
 });
 map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 
