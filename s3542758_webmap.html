@@ -64,14 +64,14 @@ background: #3074a4;
 mapboxgl.accessToken = 'pk.eyJ1IjoiZm90bGV5IiwiYSI6ImNrbHp1c3phdjFnMWcydXA4djlqMTh6emoifQ.3wA0_B9ImEpt4iDd2esJqg';
 
 var bounds = [
-    [144.0, -38.0],
-    [147.0, -37.50]
+    [144.20, -38.67],
+    [146.21, -37.18]
 ];
 
 var map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/fotley/cko0vhaap04i117nykvkb79n8', // style URL
-    //maxBounds: bounds
+    maxBounds: bounds,
     center: [145.257, -37.922], // starting position [lng, lat]
     zoom: 8.5 // starting zoom
 });
@@ -528,7 +528,7 @@ map.on('mouseleave', 'SpringWeeds1', function() {
 });
 
 map.on('idle', () => {
-// If these two layers were not added to the map, abort
+// If these layers were not added to the map, abort
 if (!map.getLayer('SummerTree') || !map.getLayer('SummerGrass') || !map.getLayer('SummerWeeds') || !map.getLayer('AutumnTree') || !map.getLayer('AutumnGrass') || !map.getLayer('WinterTree') || !map.getLayer('WinterGrass') || !map.getLayer('SpringTree') || !map.getLayer('SpringGrass') || !map.getLayer('SpringWeeds1')) {
 return;
 }
@@ -579,8 +579,10 @@ const layers = document.getElementById('menu');
 layers.appendChild(link);
 }
 });
+//
 
 </script>
  
 </body>
 </html>
+
