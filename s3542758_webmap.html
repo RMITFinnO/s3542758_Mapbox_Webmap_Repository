@@ -20,7 +20,7 @@ z-index: 1;
 top: 10px;
 right: 10px;
 border-radius: 3px;
-width: 120px;
+width: 80px;
 border: 1px solid rgba(0, 0, 0, 0.4);
 font-family: 'Open Sans', sans-serif;
 }
@@ -54,6 +54,7 @@ color: #ffffff;
 #menu a.active:hover {
 background: #3074a4;
 }
+
 </style>
 
 <nav id="menu"></nav>
@@ -635,31 +636,31 @@ map.on('click', 'SpringWeeds1', function(e) {
 map.on('mouseleave', 'SpringWeeds1', function() {
   map.getCanvas().style.cursor = '';
 });
-map.on('click', 'SummerSuburb', function(e) {
+map.on('click', 'Summer', function(e) {
   new mapboxgl.Popup()
     .setLngLat(e.lngLat)
     .setHTML(e.features[0].properties.LOC_NAME)
     .addTo(map);
 });
-map.on('click', 'AutumnSuburb', function(e) {
+map.on('click', 'Autumn', function(e) {
   new mapboxgl.Popup()
     .setLngLat(e.lngLat)
     .setHTML(e.features[0].properties.LOC_NAME)
     .addTo(map);
 });
-map.on('click', 'WinterSuburb', function(e) {
+map.on('click', 'Winter', function(e) {
   new mapboxgl.Popup()
     .setLngLat(e.lngLat)
     .setHTML(e.features[0].properties.LOC_NAME)
     .addTo(map);
 });
-map.on('click', 'SpringSuburb', function(e) {
+map.on('click', 'Spring', function(e) {
   new mapboxgl.Popup()
     .setLngLat(e.lngLat)
     .setHTML(e.features[0].properties.LOC_NAME)
     .addTo(map);
 });
-map.on('click', 'HayvenSuburb', function(e) {
+map.on('click', 'Hayven', function(e) {
   new mapboxgl.Popup()
     .setLngLat(e.lngLat)
     .setHTML(e.features[0].properties.LOC_NAME)
