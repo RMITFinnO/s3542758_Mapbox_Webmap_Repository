@@ -701,15 +701,15 @@ clickedLayer,
 );
  
 // Toggle layer visibility by changing the layout object's visibility property.
-if (visibility === 'visible') {
-map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+if (visibility === 'none') {
+map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
 this.className = '';
 } else {
 this.className = 'active';
 map.setLayoutProperty(
 clickedLayer,
 'visibility',
-'visible'
+'none'
 );
 }
 };
