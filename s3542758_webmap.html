@@ -411,6 +411,10 @@ map.on('load', function() {
       'id': 'HayvenSuburb',
       'type': 'fill',
       'source': 'HayvenSuburb',
+      'paint':{
+            'fill-color': '#600FFF',
+            'fill-outline-color': '#000080'                       
+      },
       'layout': {
           'visibility': 'none'
     },
@@ -426,7 +430,7 @@ map.on('load', function() {
       'type': 'fill',
       'source': 'SummerSuburb',
       'paint':{
-            'fill-opacity': 0.3,
+            'fill-opacity': 0.25,
             'fill-color':['match', ['get', 'Summer'],
                         0, 'white',
                         1, 'green',
@@ -434,7 +438,7 @@ map.on('load', function() {
             'fill-outline-color': 'grey'           
       },
       'layout': {
-          'visibility': 'none'
+          'visibility': 'visible'
     },
     'minzoom': 8,
     'source-layer': 'SummerSuburb-7sfd1k'
@@ -449,7 +453,7 @@ map.on('load', function() {
       'type': 'fill',
       'source': 'AutumnSuburb',
         'paint':{
-            'fill-opacity': 0.3,
+            'fill-opacity': 0.25,
             'fill-color':['match', ['get', 'Autumn'],
                         0, 'white',
                         1, 'green',
@@ -457,7 +461,7 @@ map.on('load', function() {
             'fill-outline-color': 'grey'           
       },
       'layout': {
-          'visibility': 'none'
+          'visibility': 'visible'
     },
     'minzoom': 8,
     'source-layer': 'AutumnSuburb-2l4tes'
@@ -472,7 +476,7 @@ map.on('load', function() {
       'type': 'fill',
       'source': 'WinterSuburb',
       'paint':{
-            'fill-opacity': 0.3,
+            'fill-opacity': 0.25,
             'fill-color':['match', ['get', 'Winter'],
                         0, 'white',
                         1, 'green',
@@ -486,20 +490,28 @@ map.on('load', function() {
     'source-layer': 'WinterSuburb-abalsb'
   })
   
-  //map.addSource('SpringSuburb', {
-    //type: 'vector',
-    //url: 'mapbox://fotley.3ni8m0nx'
-  //});
-  //map.addLayer({
-  //    'id': 'SpringSuburb',
-  //    'type': 'fill',
-  //    'source': 'SpringSuburb',
-  //    'layout': {
-  //        'visibility': 'visible'
-  //  },
-  //  'minzoom': 8,
-  //  'source-layer': 'SpringSuburb-67jgr2'
-  //})
+  map.addSource('SpringSuburb', {
+    type: 'vector',
+    url: 'mapbox://fotley.387up11p'
+  });
+  map.addLayer({
+      'id': 'SpringSuburb',
+      'type': 'fill',
+      'source': 'SpringSuburb',
+      'paint':{
+            'fill-opacity': 0.25,
+            'fill-color':['match', ['get', 'Spring'],
+                        0, 'white',
+                        1, 'green',
+                        'grey'],
+            'fill-outline-color': 'grey'           
+      },
+      'layout': {
+          'visibility': 'visible'
+    },
+    'minzoom': 8,
+    'source-layer': 'SpringSuburb-67jgr2'
+  })
 });
 map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 
@@ -622,6 +634,30 @@ map.on('click', 'SpringWeeds1', function(e) {
 });
 map.on('mouseleave', 'SpringWeeds1', function() {
   map.getCanvas().style.cursor = '';
+});
+map.on('click', 'SummerSuburb', function(e) {
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.LOC_NAME)
+    .addTo(map);
+});
+map.on('click', 'AutumnSuburb', function(e) {
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.LOC_NAME)
+    .addTo(map);
+});
+map.on('click', 'WinterSuburb', function(e) {
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.LOC_NAME)
+    .addTo(map);
+});
+map.on('click', 'SpringSuburb', function(e) {
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.LOC_NAME)
+    .addTo(map);
 });
 map.on('click', 'HayvenSuburb', function(e) {
   new mapboxgl.Popup()
