@@ -426,17 +426,15 @@ map.on('load', function() {
       'type': 'fill',
       'source': 'SummerSuburb',
       'paint':{
-          'fill-opacity': 0.3,
-          'fill-color':['match', ['get', 'Summer'],
+            'fill-opacity': 0.3,
+            'fill-color':['match', ['get', 'Summer'],
                         0, 'white',
                         1, 'green',
                         'grey'],
-          //property: 'Summer',
-              //stops: [[0, 'FCC2B5'], [1,'0EEF6D']]
-          'fill-outline-color': 'grey'           
+            'fill-outline-color': 'grey'           
       },
       'layout': {
-          'visibility': 'visible'
+          'visibility': 'none'
     },
     'minzoom': 8,
     'source-layer': 'SummerSuburb-7sfd1k'
@@ -451,36 +449,42 @@ map.on('load', function() {
       'type': 'fill',
       'source': 'AutumnSuburb',
         'paint':{
-          'fill-opacity': 0.3,
-          'fill-color':['match', ['get', 'Autumn'],
+            'fill-opacity': 0.3,
+            'fill-color':['match', ['get', 'Autumn'],
                         0, 'white',
                         1, 'green',
                         'grey'],
-          //property: 'Summer',
-              //stops: [[0, 'FCC2B5'], [1,'0EEF6D']]
-          'fill-outline-color': 'grey'           
+            'fill-outline-color': 'grey'           
       },
       'layout': {
-          'visibility': 'visible'
+          'visibility': 'none'
     },
     'minzoom': 8,
     'source-layer': 'AutumnSuburb-2l4tes'
   })
   
-  //map.addSource('WinterSuburb', {
-    //type: 'vector',
-    //url: 'mapbox://fotley.3ni8m0nx'
-  //});
-  //map.addLayer({
-  //    'id': 'WinterSuburb',
-  //    'type': 'fill',
-  //    'source': 'WinterSuburb',
-  //    'layout': {
-  //        'visibility': 'visible'
-  //  },
-  //  'minzoom': 8,
-  //  'source-layer': 'WinterSuburb-abalsb'
-  //})
+  map.addSource('WinterSuburb', {
+    type: 'vector',
+    url: 'mapbox://fotley.ar3unb7t'
+  });
+  map.addLayer({
+      'id': 'WinterSuburb',
+      'type': 'fill',
+      'source': 'WinterSuburb',
+      'paint':{
+            'fill-opacity': 0.3,
+            'fill-color':['match', ['get', 'Winter'],
+                        0, 'white',
+                        1, 'green',
+                        'grey'],
+            'fill-outline-color': 'grey'           
+      },
+      'layout': {
+          'visibility': 'visible'
+    },
+    'minzoom': 8,
+    'source-layer': 'WinterSuburb-abalsb'
+  })
   
   //map.addSource('SpringSuburb', {
     //type: 'vector',
