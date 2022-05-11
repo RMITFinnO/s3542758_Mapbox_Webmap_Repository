@@ -403,14 +403,14 @@ map.on('load', function() {
     //limiting visibility of layer with zoom
     'source-layer': 'SpringWeeds1-d58w7y'
   });
-  map.addSource('HayvenSuburb', {
+  map.addSource('Hayven', {
     type: 'vector',
     url: 'mapbox://fotley.5fsz9mby'
   });
   map.addLayer({
-      'id': 'HayvenSuburb',
+      'id': 'Hayven',
       'type': 'fill',
-      'source': 'HayvenSuburb',
+      'source': 'Hayven',
       'paint':{
             'fill-color': '#600FFF',
             'fill-outline-color': '#000080'                       
@@ -421,14 +421,14 @@ map.on('load', function() {
     'minzoom': 8,
     'source-layer': 'HavenSuburb-3oi6lb'
   })
-  map.addSource('SummerSuburb', {
+  map.addSource('Summer', {
     type: 'vector',
     url: 'mapbox://fotley.3ni8m0nx'
   });
   map.addLayer({
-      'id': 'SummerSuburb',
+      'id': 'Summer',
       'type': 'fill',
-      'source': 'SummerSuburb',
+      'source': 'Summer',
       'paint':{
             'fill-opacity': 0.25,
             'fill-color':['match', ['get', 'Summer'],
@@ -438,20 +438,20 @@ map.on('load', function() {
             'fill-outline-color': 'grey'           
       },
       'layout': {
-          'visibility': 'visible'
+          'visibility': 'none'
     },
     'minzoom': 8,
     'source-layer': 'SummerSuburb-7sfd1k'
   })
 
-  map.addSource('AutumnSuburb', {
+  map.addSource('Autumn', {
     type: 'vector',
     url: 'mapbox://fotley.8wmem3kp'
   });
   map.addLayer({
-      'id': 'AutumnSuburb',
+      'id': 'Autumn',
       'type': 'fill',
-      'source': 'AutumnSuburb',
+      'source': 'Autumn',
         'paint':{
             'fill-opacity': 0.25,
             'fill-color':['match', ['get', 'Autumn'],
@@ -461,20 +461,20 @@ map.on('load', function() {
             'fill-outline-color': 'grey'           
       },
       'layout': {
-          'visibility': 'visible'
+          'visibility': 'none'
     },
     'minzoom': 8,
     'source-layer': 'AutumnSuburb-2l4tes'
   })
   
-  map.addSource('WinterSuburb', {
+  map.addSource('Winter', {
     type: 'vector',
     url: 'mapbox://fotley.ar3unb7t'
   });
   map.addLayer({
-      'id': 'WinterSuburb',
+      'id': 'Winter',
       'type': 'fill',
-      'source': 'WinterSuburb',
+      'source': 'Winter',
       'paint':{
             'fill-opacity': 0.25,
             'fill-color':['match', ['get', 'Winter'],
@@ -484,20 +484,20 @@ map.on('load', function() {
             'fill-outline-color': 'grey'           
       },
       'layout': {
-          'visibility': 'visible'
+          'visibility': 'none'
     },
     'minzoom': 8,
     'source-layer': 'WinterSuburb-abalsb'
   })
   
-  map.addSource('SpringSuburb', {
+  map.addSource('Spring', {
     type: 'vector',
     url: 'mapbox://fotley.387up11p'
   });
   map.addLayer({
-      'id': 'SpringSuburb',
+      'id': 'Spring',
       'type': 'fill',
-      'source': 'SpringSuburb',
+      'source': 'Spring',
       'paint':{
             'fill-opacity': 0.25,
             'fill-color':['match', ['get', 'Spring'],
@@ -507,7 +507,7 @@ map.on('load', function() {
             'fill-outline-color': 'grey'           
       },
       'layout': {
-          'visibility': 'visible'
+          'visibility': 'none'
     },
     'minzoom': 8,
     'source-layer': 'SpringSuburb-67jgr2'
@@ -668,12 +668,12 @@ map.on('click', 'HayvenSuburb', function(e) {
 
 map.on('idle', () => {
 // If these layers were not added to the map, abort
-if (!map.getLayer('SummerTree') || !map.getLayer('SummerGrass') || !map.getLayer('SummerWeeds') || !map.getLayer('AutumnTree') || !map.getLayer('AutumnGrass') || !map.getLayer('WinterTree') || !map.getLayer('WinterGrass') || !map.getLayer('SpringTree') || !map.getLayer('SpringGrass') || !map.getLayer('SpringWeeds1')) {
+if (!map.getLayer('Summer') || !map.getLayer('Autumn') || !map.getLayer('Winter') || !map.getLayer('Spring') || !map.getLayer('Hayven')) {
 return;
 }
  
 // Enumerate ids of the layers.
-const toggleableLayerIds = ['SummerTree', 'SummerGrass', 'SummerWeeds', 'AutumnTree', 'AutumnGrass', 'WinterTree', 'WinterGrass', 'SpringTree', 'SpringGrass', 'SpringWeeds1'];
+const toggleableLayerIds = ['Summer', 'Autumn', 'Winter', 'Spring', 'Hayven'];
  
 // Set up the corresponding toggle button for each layer.
 for (const id of toggleableLayerIds) {
