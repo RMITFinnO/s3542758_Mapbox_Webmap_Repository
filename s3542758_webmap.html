@@ -28,6 +28,7 @@ font-family: 'Open Sans', sans-serif;
  
 #menu a {
 font-size: 13px;
+font-family: "Century Gothic";
 color: #404040;
 display: block;
 margin: 0;
@@ -59,9 +60,24 @@ background: #3074a4;
 #console {
 position: absolute;
 width: 190px;
-height: 390px;
+height: 450px;
 bottom: 30px;
 margin: 2px;
+padding: 1px 10px;
+background-color: #fff;
+opacity: 0.90;
+border-radius: 15px;
+border: solid 2px;
+border-color: black;
+}
+
+#title {
+position: sticky;
+width: 500px;
+height: 60px;
+top: 10px;
+left: 33%;
+margin: 20px;
 padding: 1px 10px;
 background-color: #fff;
 opacity: 0.90;
@@ -85,17 +101,18 @@ border-color: black;
 }
 
 h1 {
-font-size: 19px;
-line-height: 15px;
-font-family: 'Times New Roman';
+font-size: 20px;
+line-height: 20px;
+text-align: center;
+font-family: 'Century Gothic';
 font-weight: 95;
 color: rgb(37, 37, 37);
 }
  
 h2 {
-font-size: 18px;
-line-height: 15px;
-font-family: 'Times New Roman';
+font-size: 15px;
+line-height: 20px;
+font-family: 'Century Gothic';
 font-weight: 95;
 color: rgb(37, 37, 37);
 }
@@ -189,14 +206,16 @@ span.f {
     <h2><div class="circlearancione"><span class="f">Tree</span></div></h2>
     <h2><div class="circlearancione2"><span class="f">Grass</span></div></h2>
     <h2><div class="circlearancione3"><span class="f">Weed</span></div></h2>    
-    <h2>Pollen is seasonal, so toggle the season overlay in the top right. Green suburbs are free from that season's pollen - as more are toggled, the darker suburb represents the better annual pollen suburb.<br> <span class="a"></span><span class="b"></span><span class="c"></span><span class="d"></span><span class="e"></span> <br> Blue is the hay fever haven!</h1>
+    <h2>Pollenating periods vary, so toggle the season overlay in the top right. Green suburbs are free from that season's pollen - as more are toggled, the darker suburb represents the better annual pollen suburb.<br> <span class="a"></span><span class="b"></span><span class="c"></span><span class="d"></span><span class="e"></span> <br> Blue is the hay fever haven!</h1>
     
 </div>
 <div id='source'>
     <h3>Source: Atlas of Living Australia. Accessed: 03/2022<br>
     <a href="https://doi.ala.org.au/doi/10.26197/ala.fad5bf23-4818-4522-857f-e71596361c4b" target="_blank">https://doi.ala.org.au/doi/10.26197/ala.fad5bf23-4818-4522-857f-e71596361c4b</a></h3>
 </div>
-
+<div id='title'>
+    <h1><b>Spatial distribution of allergenic pollen producing species in Metropolitan Melbourne</b></h1>
+</div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiZm90bGV5IiwiYSI6ImNrbHp1c3phdjFnMWcydXA4djlqMTh6emoifQ.3wA0_B9ImEpt4iDd2esJqg';
 
