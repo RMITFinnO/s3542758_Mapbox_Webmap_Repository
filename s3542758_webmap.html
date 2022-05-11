@@ -58,7 +58,7 @@ background: #3074a4;
 #console {
 position: absolute;
 width: 190px;
-height: 380px;
+height: 390px;
 bottom: 30px;
 margin: 2px;
 padding: 1px 10px;
@@ -127,17 +127,34 @@ span.e {
 }
 
 .circlearancione {
-  display: flex;
-  align-items: center;
-}
-div:before {
-  content: '';
   background-color: red;
-  border-color: lightgrey;
+  border-color: white;
   border-radius: 50%;
-  border-width: 5px;
-  height: 8px;
-  width: 8px;
+  border-width: 1px;
+  height: 12px;
+  width: 12px;
+  
+}
+.circlearancione2 {
+  background-color: green;
+  border-color: white;
+  border-radius: 50%;
+  border-width: 1px;
+  height: 12px;
+  width: 12px;
+
+}
+.circlearancione3 {
+  background-color: orange;
+  border-color: white;
+  border-radius: 50%;
+  border-width: 1px;
+  height: 12px;
+  width: 12px;
+  
+}
+span.f {
+  margin-left: 22px;
 }
 
 </style>
@@ -145,11 +162,11 @@ div:before {
 <nav id="menu"></nav>
 <div id="map"></div>
 <div id='console'>
-    <h2>Each point represents an instance of allergenic pollen producing vegetation.</h1>
-    <div class="circlearancione">Tree</div>
-    <div class="circlearancione">Grass</div>
-    <div class="circlearancione">Weed</div>
-    <h2>Pollen is seasonal, so toggle the season overlay in the top right. Green suburbs are free from that season's pollen - as more are toggled, the darker suburb represents the better annual pollen suburb.<br>  <span class="a"></span><span class="b"></span><span class="c"></span><span class="d"></span><span class="e"></span> <br> Blue is the hay fever haven!</h1>
+    <h2>Each point represents an instance of allergenic pollen producing vegetation.</h2>
+    <h2><div class="circlearancione"><span class="f">Tree</span></div></h2>
+    <h2><div class="circlearancione2"><span class="f">Grass</span></div></h2>
+    <h2><div class="circlearancione3"><span class="f">Weed</span></div></h2>    
+    <h2>Pollen is seasonal, so toggle the season overlay in the top right. Green suburbs are free from that season's pollen - as more are toggled, the darker suburb represents the better annual pollen suburb.<br> <span class="a"></span><span class="b"></span><span class="c"></span><span class="d"></span><span class="e"></span> <br> Blue is the hay fever haven!</h1>
     
 </div>
 
